@@ -1,0 +1,20 @@
+{
+  "name": "bmp-tests",
+  "version": "1.0.0",
+  "description": "Integration tests for GDB and the Black Magic Probe.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "coffee-script": "^1.12.5",
+    "mocha": "^3.2.0",
+    "node-gdb": "0.0.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "mocha --compilers coffee:coffee-script/register"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -11,6 +11,6 @@ upgrade = (sn, bin) ->
             else
                 reject(err)
 
-Promise.all(upgrade(sn, 'blackmagic.bin') for sn of config)
+Promise.all(upgrade(sn, 'blackmagic.bin') for board, sn of config)
     .then ->
         console.log "All done!"

@@ -48,7 +48,7 @@ void _unhandled_exception(void)
 
 void __attribute__((naked)) reset_handler(void)
 {
-        __builtin_memcpy(&_data, &_data_loadaddr, &_edata - &_data_loadaddr);
+        __builtin_memcpy(&_data, &_data_loadaddr, &_edata - &_data);
         __builtin_memset(&_edata, 0, &_ebss - &_edata);
         main();
 }

@@ -1,0 +1,10 @@
+MEMORY
+{
+	m_int   (rx) : ORIGIN = 0x00000000, LENGTH = 0x00000400
+	m_fconf (rx) : ORIGIN = 0x00000400, LENGTH = 0x00000010
+	rom     (rx) : ORIGIN = 0x00000410, LENGTH = 0x0007FBF0
+	ram    (rwx) : ORIGIN = 0x1fff0000, LENGTH = 0x00010000
+}
+
+INCLUDE base.ld
+

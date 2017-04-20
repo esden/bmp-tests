@@ -46,9 +46,14 @@ void _unhandled_exception(void)
 #pragma weak usage_fault_handler = _unhandled_exception
 #pragma weak debug_monitor_handler = _unhandled_exception
 
+void __attribute__((weak)) board_init(void)
+{
+}
+
 void __attribute__((naked)) reset_handler(void)
 {
         __builtin_memcpy(&_data, &_data_loadaddr, &_edata - &_data);
         __builtin_memset(&_edata, 0, &_ebss - &_edata);
+	board_init();
         main();
 }
